@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Code Family | Elite Web Development & Software Engineering</title>
+    <meta name="description"
+        content="The Code Family - An elite global development agency specializing in luxury web systems, software engineering, and digital automation. Exclusive, powerful, and precise.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Outfit:wght@300;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Lucide Icons (via CDN for simplicity and premium look) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="loading">
+
+    <!-- Cinematic Loader -->
+    <div id="loader" class="loader-overlay">
+        <div class="loader-content">
+            <h1 class="glitch" data-text="THE CODE FAMILY">THE CODE FAMILY</h1>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Background Canvas for Particles/Smoke -->
+    <canvas id="hero-canvas"></canvas>
+
+    <!-- Music Control -->
+    <div class="music-controller" id="music-control">
+        <div class="music-visualizer paused" id="visualizer">
+            <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="music-actions">
+            <button id="mute-toggle" title="Toggle Music">
+                <i data-lucide="volume-2"></i>
+            </button>
+            <button id="lyrics-toggle" title="Show Lyrics">
+                <i data-lucide="align-left"></i>
+            </button>
+        </div>
+        <audio id="bg-audio" loop preload="auto">
+            <source src="music.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Lyrics Overlay -->
+    <div class="lyrics-overlay" id="lyrics-overlay">
+        <div class="lyrics-container">
+            <div class="lyrics-header">
+                <h3>THE CODE FAMILY • CANT GET HIGH</h3>
+                <button id="close-lyrics">&times;</button>
+            </div>
+            <div class="lyrics-content">
+                <div class="lyrics-section">
+                    <span class="lyrics-label">[Verse 1]</span>
+                    <p class="lyrics-line">I'm at the rodeo with a bloody nose</p>
+                    <p class="lyrics-line">I see those flashing lights every time I close my eyes</p>
+                    <p class="lyrics-line">I'm mixing chemicals, lookin' for a miracle</p>
+                    <p class="lyrics-line">I pray I feel something, but I'm out of dopamine</p>
+                </div>
+                
+                <div class="lyrics-section">
+                    <span class="lyrics-label">[Pre-Chorus]</span>
+                    <p class="lyrics-line">It don't work no more</p>
+                    <p class="lyrics-line">No, it don't no more</p>
+                    <p class="lyrics-line">It don't work</p>
+                    <p class="lyrics-line">Oh, I've tried</p>
+                </div>
+
+                <div class="lyrics-section highlight">
+                    <span class="lyrics-label">[Chorus]</span>
+                    <p class="lyrics-line">But I can't get high like I used to every night</p>
+                    <p class="lyrics-line">I can't get high</p>
+                    <p class="lyrics-line">It don't work no more, oh, I've tried</p>
+                </div>
+
+                <div class="lyrics-section">
+                    <span class="lyrics-label">[Verse 2]</span>
+                    <p class="lyrics-line">I'm a man that's on a mission, chasin' dragons playin' chicken</p>
+                    <p class="lyrics-line">You either die a hero or live long enough to see yourself become the villain</p>
+                    <p class="lyrics-line">Candy flippin' in the foyer, mixin' dust with marijuana</p>
+                    <p class="lyrics-line">And I think I'm hearin' voices, can't control the paranoia</p>
+                </div>
+
+                <div class="lyrics-section highlight">
+                    <span class="lyrics-label">[Chorus]</span>
+                    <p class="lyrics-line">Oh, I can't get high like I used to every night</p>
+                    <p class="lyrics-line">I can't get high</p>
+                    <p class="lyrics-line">It don't work no more, oh, I've tried</p>
+                    <p class="lyrics-line">I can't get high like I used to every night</p>
+                    <p class="lyrics-line">I can't get high</p>
+                    <p class="lyrics-line">It don't work no more, oh, I've tried</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="floating-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo" class="nav-logo">
+            </div>
+            <div class="nav-links">
+                <a href="#hero" class="active">Initiation</a>
+                <a href="#team">Hierarchy</a>
+                <a href="#work">Operations</a>
+                <a href="#services">Specialties</a>
+                <a href="#contact">The Network</a>
+            </div>
+            <div class="mobile-toggle" id="mobile-toggle">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-nav-links">
+            <a href="#hero">Initiation</a>
+            <a href="#team">Hierarchy</a>
+            <a href="#work">Operations</a>
+            <a href="#services">Specialties</a>
+            <a href="#contact">The Network</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <div class="hero-content" data-scroll>
+                    <div class="hero-logo-container">
+                        <img src="logo.png" alt="The Code Family" class="hero-logo">
+                    </div>
+                    <h2 class="subtitle glitch-sub">Elite Web Development • Software Engineering • Digital Systems</h2>
+                    <h1 class="main-title">THE CODE FAMILY</h1>
+                    <p class="hero-description">Precision in logic. Loyalty in development. We build the systems that
+                        rule the digital underground.</p>
+                    <div class="cta-group">
+                        <a href="https://discord.gg/codecartel" class="btn btn-primary glow-red">
+                            <span>Enter The Family</span>
+                        </a>
+                        <a href="#work" class="btn btn-secondary">
+                            <span>View Featured Work</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+                <span>SCROLL TO ASCEND</span>
+            </div>
+        </section>
+
+        <!-- Team Section (Hierarchy) -->
+        <section id="team" class="section team-section">
+            <div class="container">
+                <div class="section-header" data-scroll>
+                    <span class="label">THE HIERARCHY</span>
+                    <h2>Leadership</h2>
+                </div>
+                <div class="team-grid">
+                    <!-- Founder -->
+                    <div class="member-card glass-card" data-scroll data-tilt>
+                        <div class="card-glow"></div>
+                        <div class="member-image">
+                            <img src="https://cdn.discordapp.com/avatars/1496146117526687755/c720a0ed26eaab5433c50f0b7180aa78.png?size=1024" alt="Founder">
+                        </div>
+                        <div class="member-info">
+                            <span class="role-badge founder">FOUNDER</span>
+                            <h3>ID: 1496146117526687755</h3>
+                            <p>Supreme architect of the digital cartel. Setting the vision and the code.</p>
+                        </div>
+                    </div>
+                    <!-- Co-Founder -->
+                    <div class="member-card glass-card" data-scroll data-tilt>
+                        <div class="card-glow"></div>
+                        <div class="member-image">
+                            <img src="https://cdn.discordapp.com/avatars/1121480598700167188/6f70479175bbef58d9ef6a72c14c9138.png?size=1024" alt="Co-Founder">
+                        </div>
+                        <div class="member-info">
+                            <span class="role-badge co-founder">CO-FOUNDER</span>
+                            <h3>ID: 1121480598700167188</h3>
+                            <p>Master strategist and engine of growth. Overseeing global operations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Works (Operations) -->
+        <section id="work" class="section work-section">
+            <div class="container">
+                <div class="section-header" data-scroll>
+                    <span class="label">OPERATIONS</span>
+                    <h2>Featured Work</h2>
+                </div>
+                <div class="work-grid">
+                    <a href="https://shahcaf.github.io/XELO-DEVELOPMENT/" class="work-card glass-card" target="_blank"
+                        data-scroll data-tilt>
+                        <div class="work-img">
+                            <img src="xelo_preview.png" alt="XELO Development">
+                            <div class="overlay">
+                                <i data-lucide="external-link"></i>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <h3>XELO Development</h3>
+                            <p>Premium automation and scripting systems for the modern era.</p>
+                        </div>
+                    </a>
+                    <a href="https://shahcaf.github.io/GTA-Services-Portfolio-Website/" class="work-card glass-card"
+                        target="_blank" data-scroll data-tilt>
+                        <div class="work-img">
+                            <img src="gta_preview.png" alt="GTA Services">
+                            <div class="overlay">
+                                <i data-lucide="external-link"></i>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <h3>GTA Services Portfolio</h3>
+                            <p>Cinematic service hub for high-end digital solutions.</p>
+                        </div>
+                    </a>
+                    <a href="https://shahcaf.github.io/United-Nations-Global-Assembly/" class="work-card glass-card"
+                        target="_blank" data-scroll data-tilt>
+                        <div class="work-img">
+                            <img src="un_preview.png" alt="United Nations">
+                            <div class="overlay">
+                                <i data-lucide="external-link"></i>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <h3>Global Assembly</h3>
+                            <p>A sophisticated digital representation of global systems.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services (Specialties) -->
+        <section id="services" class="section services-section">
+            <div class="container">
+                <div class="section-header" data-scroll>
+                    <span class="label">SPECIALTIES</span>
+                    <h2>Our Services</h2>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card glass-card" data-scroll>
+                        <i data-lucide="code-2"></i>
+                        <h3>Web Development</h3>
+                        <p>High-performance, secure web applications built with the latest technologies.</p>
+                    </div>
+                    <div class="service-card glass-card" data-scroll>
+                        <i data-lucide="bot"></i>
+                        <h3>Discord Bot Development</h3>
+                        <p>Advanced automation and community management systems for Discord.</p>
+                    </div>
+                    <div class="service-card glass-card" data-scroll>
+                        <i data-lucide="layout"></i>
+                        <h3>UI/UX Design</h3>
+                        <p>Immersive digital experiences that captivate and command attention.</p>
+                    </div>
+                    <div class="service-card glass-card" data-scroll>
+                        <i data-lucide="cpu"></i>
+                        <h3>Automation Systems</h3>
+                        <p>Efficiency-driven scripts and tools to streamline complex workflows.</p>
+                    </div>
+                    <div class="service-card glass-card" data-scroll>
+                        <i data-lucide="shield-check"></i>
+                        <h3>Custom Software Solutions</h3>
+                        <p>Tailor-made software built to solve unique and challenging problems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Digital Identity Hub (External Links) -->
+        <section id="identity" class="section identity-section">
+            <div class="container">
+                <div class="identity-banner glass-card" data-scroll>
+                    <div class="identity-content">
+                        <span class="label">DIGITAL IDENTITY</span>
+                        <h2>The Cartel Hub</h2>
+                        <p>Access our verified external identities and connections across the web.</p>
+                        <a href="https://guns.lol/codecartel" class="btn btn-secondary" target="_blank">
+                            <i data-lucide="link"></i>
+                            <span>guns.lol/codecartel</span>
+                        </a>
+                    </div>
+                    <div class="identity-visual">
+                        <div class="dots-animation">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact (The Network) -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="contact-box glass-card" data-scroll>
+                    <div class="contact-header">
+                        <h2>Join The Network</h2>
+                        <p>Ready to commission the family? Step into our Discord headquarters.</p>
+                    </div>
+                    <a href="https://discord.gg/codecartel" class="btn btn-primary glow-gold big-btn">
+                        <i data-lucide="message-square"></i>
+                        <span>Enter Discord Server</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 THE CODE FAMILY. All Rights Reserved. Built for power.</p>
+                <div class="footer-dots">
+                    <span class="dot-blink"></span>
+                    <span>SYSTEM ONLINE</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
